@@ -70,7 +70,8 @@ def updateData():
         #if empt data provided by user
         messagebox.showwarning("Cannot Update", "All the fields are required!")
     else:
-        myDB = mysql.connector.connect(host="localhost", user="root", passwd="Sasuke1380!#", database="employee")
+        # Add your own localhost, username, passwd and database
+        myDB = mysql.connector.connect(host="", user="", passwd="", database="")
         myCur = myDB.cursor()
         myCur.execute(query, data)
         myDB.commit()
@@ -87,7 +88,8 @@ def getData():
     if(enterId.get() == ""): # Combined reading and checking for empty data
         messagebox.showwarning("Fetch Status", "Please provide the Emp ID to fetch the data")
     else: #Fill the entry fields from database
-        myDB = mysql.connector.connect(host="localhost", user="root", passwd="Sasuke1380!#", database="employee")
+        # Add your own localhost, username, passwd and database
+        myDB = mysql.connector.connect(host="", user="", passwd="", database="")
         myCur = myDB.cursor()
         myCur.execute(query)
         rows = myCur.fetchall()
@@ -103,7 +105,8 @@ def deleteData():
     if(enterId.get() == ""): #Combined reading and checking of empID data
         messagebox.showwarning("Cannot Delete", "Please provide the Emp ID to delete the data!")
     else: #Delete selected record matching the emp ID
-        myDB = mysql.connector.connect(host="localhost", user="root", passwd="Sasuke1380!#", database="employee")
+        # Add your own localhost, username, passwd and database
+        myDB = mysql.connector.connect(host="", user="", passwd="", database="")
         myCur = myDB.cursor()
         myCur.execute(query)
         myDB.commit()
@@ -118,7 +121,8 @@ def deleteData():
 
 def show():
     query = ("Select * from empDetails")
-    myDB= mysql.connector.connect(host="localhost", user="root", passwd="Sasuke1380!#", database="employee")
+    # Add your own localhost, username, passwd and database
+    myDB = mysql.connector.connect(host="", user="", passwd="", database="")
     myCur= myDB.cursor()
     myCur.execute(query)
     rows= myCur.fetchall()
