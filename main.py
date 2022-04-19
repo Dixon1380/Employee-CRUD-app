@@ -43,7 +43,8 @@ def insertData():
     #if empty data provided by user #If empty data provided by user
         messagebox.showwarning("Cannot Insert", "All the fields are required!")
     else:
-        myDB = mysql.connector.connect(host="localhost", user="root", passwd="Sasuke1380!#", database="employee")
+        #Add your own localhost, username, passwd and database
+        myDB = mysql.connector.connect(host="", user="", passwd="", database="")
         myCur = myDB.cursor()
         myCur.execute(query, data)
         myDB.commit()
